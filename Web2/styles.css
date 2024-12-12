@@ -1,0 +1,62 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1e1e1e; /* Dark background */
+    color: #ffffff;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%; /* Full width to ensure proper alignment */
+}
+
+/* Button Styling */
+button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    z-index: 2; /* Ensure it's above the sliding text */
+}
+
+button:hover {
+    background-color: #505050;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Sliding Message */
+#message {
+    position: absolute;
+    top: -100px; /* Start just above the visible screen */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 1s ease-in-out; /* Smooth animation */
+}
+
+#message.visible {
+    top: calc(50% - 100px); /* Stop just above the button */
+    opacity: 1;
+}
